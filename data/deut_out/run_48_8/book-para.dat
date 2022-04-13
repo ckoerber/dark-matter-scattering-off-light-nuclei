@@ -1,0 +1,12 @@
+# data file provides parameters that are used to set up partial wave channels
+# section NN channels 
+  2    1  .false.  .true.   0   0  !  l12max j12max  evench  cdepNN mt12min mt12max !!! l12max = j12max +1 is required !!!
+# section 3N channels
+  7   15    1    1    1    1          !  l3max  2*I3max(=2*l3max+1)  2*j3min  2*j3max (=2*j4+I4max)  pari3Nmin pari3Nmax
+  1    3  .true.   1   1         !  2*tau3min 2*tau3max cdep3N 2*mtau3min 2*mtau3max
+# section 4N channels
+0  1  0  0    1  1           !  l4max  2*I4max(=2*l4max+1)  j4min  j4max  pari4Nmin pari4Nmax
+0  0                         !  lammax Imax  (=lammax+j12max)
+0  0 .false.  0  0           !  tau4min tau4max cdep4N mtau4min mtau4max
+4 4                          !  lsummax31  lsummax 22
+# end of book-para.dat

@@ -1,0 +1,78 @@
+TRNS
+1.0  6.0  20.0  48 8
+1.0  6.0  20.0  52 8
+1.0  3.0  20.0  1  0 
+1.0  3.0  20.0  1  0 
+1.0  3.0  20.0  1  0 
+20 20 100
+15  15        ! number of P12 and P3 points for TRIM 
+0.391402E-01   0.100007E+00  ! P12 points and weights 
+0.202405E+00   0.224177E+00
+0.480886E+00   0.328630E+00
+0.849907E+00   0.403900E+00
+0.127669E+01   0.443286E+00
+0.172331E+01   0.443286E+00
+0.215009E+01   0.403900E+00
+0.251911E+01   0.328630E+00
+0.279760E+01   0.224177E+00
+0.296086E+01   0.100007E+00
+0.323455E+01   0.592317E+00
+0.415383E+01   0.119657E+01
+0.550000E+01   0.142222E+01
+0.684617E+01   0.119657E+01
+0.776545E+01   0.592317E+00
+0.391402E-01   0.100007E+00   ! P3 points and weights
+0.202405E+00   0.224177E+00
+0.480886E+00   0.328630E+00
+0.849907E+00   0.403900E+00
+0.127669E+01   0.443286E+00
+0.172331E+01   0.443286E+00
+0.215009E+01   0.403900E+00
+0.251911E+01   0.328630E+00
+0.279760E+01   0.224177E+00
+0.296086E+01   0.100007E+00
+0.323455E+01   0.592317E+00
+0.415383E+01   0.119657E+01
+0.550000E+01   0.142222E+01
+0.684617E+01   0.119657E+01
+0.776545E+01   0.592317E+00
+
+0.001 0.4  0.4  3.0  7.5  12.0  10.0 ! these are parameters for ROM (P12P,add two more mesh points)
+6 18 0                               ! these are parameters for ROM 
+0.001 0.4  0.4  3.0  7.5  12.0  10.0 ! these are parameters for ROM (P3P,add two more mesh points)
+6 16 2                               ! these are parameters for ROM 
+
+0. .001  2.0   6.  10.   ! these are parameters for TNF 
+1 5  7  3                ! these are parameters for TNF 
+0. .001  2.0   6.  10.   ! these are parameters for TNF 
+1 5  7  3                ! these are parameters for TNF 
+# this datafile specifies the input data needed to discretize 
+# the momenta p12, p3, q4, q and p34, in this order
+#
+# line 7 contains the number of grid points for the
+# integration over the angles x=cos(theta) and phi
+# and the number of grid points for the interpolation in x
+#
+# momenta are given in units of fm^-1
+# integration is performed from 0 to p3
+# each line contains the values p1, p2, p3, n1, n2 for the respective momenta
+# n1/2 points are chosen between 0 and p1
+# n1/2 points are chosen between p1 and p2
+# n2 points are chosen between p2 and p3
+# if mehstype is TNF then four more lines are appended that 
+# are parameters of Dirk Huebers 3NF mesh
+# first two are for p grid 
+# second two are for q grid 
+
+# STANDARD FOR 3N OBSERVABLES (p3 distribution is modified in meshpoints.F90)
+# 1.0  5.0  15.0  32  8
+# 1.0  4.0  10.0  70  10
+
+# Usual momentum distribution
+# 1.0  10.0  20.0  32  8
+# 1.0  10.0  20.0  32  8
+
+# Witala momentum distribution taken from Evgeny's code
+# 2.5  7.5  15.0  32  8
+# 1.5  4.5  8.0  32  8
+
